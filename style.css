@@ -134,7 +134,8 @@ nav {
 }
 
 .home-img img {
-    width: 25rem; /* Adjusted size of the image */
+    width: 35rem; /* Increased size of the image */
+    max-width: 100%; /* Make it responsive */
     margin-bottom: 2rem; /* Space between image and h1 */
 }
 
