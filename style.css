@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%; /* Base size for rem units */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+    opacity: 0;
+}
+
+body.fade-in {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Header Section */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent; /* Added for underline effect */
+}
+
+.nav-links a.active {
+    color: #b74b4b;
+    border-color: #b74b4b; /* Red underline */
+}
+
+.nav-links a:hover {
+    color: #b74b4b;
+    border-color: #b74b4b; /* Red underline on hover */
+}
+
+/* Mobile Menu Styles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem 0;
+        z-index: 100;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 1rem;
+        text-align: center;
+        border-bottom: 3px solid transparent; /* Added for underline effect */
+    }
+}
+
+/* Home Section for Styling */
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column; /* Stack items vertically */
+}
+
+.home-img img {
+    width: 25rem; /* Adjusted size of the image */
+    margin-bottom: 2rem; /* Space between image and h1 */
+}
+
+.home-content h1 {
+    font-size: 4rem;
+    color: #fff;
+}
+
+.home-content h1 span {
+    color: #b74b4b;
+}
+
+.home-content h3 {
+    font-size: 2.5rem; /* Increase H3 size */
+    margin: 1rem 0; /* Space above and below */
+    color: white; /* Color for H3 */
+}
+
+.home-content p {
+    font-size: 1.6rem; /* Increased font size for clarity */
+    color: white;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    max-width: 60rem;
+}
+
+/* Content Section */
+.content-section {
+    text-align: center;
+    margin-top: 10rem;
+    padding: 0 5%;
+}
+
+.content-section h1 {
+    font-size: 4rem;
+    color: #b74b4b;
+    margin-bottom: 2rem;
+}
+
+/* Skills Section Styling */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.skill-box {
+    width: 20rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    font-size: 2rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Video Section Styling */
+.video-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem auto;
+    width: 80%;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 45%;
+    padding: 1rem;
+    border: 4px solid #b74b4b;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(183, 75, 75, 0.6);
+}
+
+video {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Social Icons */
+.social-icons {
+    font-size: 1.8rem; /* Normal size */
+    margin-bottom: 3rem;
+}
+
+.social-icons a {
+    color: white;
+    margin-right: 1rem;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #b74b4b;
+}
+
+/* Hire Me Button */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 3.2rem;
+    background-color: #b74b4b; /* Red color for "Hire Me" */
+    color: white;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1); /* Zoom in effect */
+    background-color: #f53737;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 3%;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem; /* Adjusted size for mobile */
+        margin: 1rem 0; /* Keep margin */
+    }
+
+    .typing-text {
+        font-size: 2rem;
+    }
+
+    .home-img img {
+        width: 25rem; /* Image size for mobile */
+    }
+
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-box {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-wrapper {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+
+    header {
+        padding: 1rem 3%;
+    }
+
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.2rem; /* Slightly larger for mobile */
+        margin: 1rem 0; /* Margin for spacing */
+    }
+
+    .typing-text {
+        font-size: 1.8rem;
+    }
+
+    .home-img img {
+        width: 20rem; /* Smaller image for mobile */
+    }
+
+    .btn {
+        padding: 1rem 2.5rem;
+    }
+
+    .content-section h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* General Text Size for Other Pages */
+.content-section p, /* Paragraphs in the content section */
+.skills-container, /* Adjust this for skill section if needed */
+video, /* Video text */
+.social-icons a, /* Social media links */
+.btn, /* Button text */
+nav a { /* Navigation links */
+    font-size: 1.6rem; /* Standard size for all text */
+}
